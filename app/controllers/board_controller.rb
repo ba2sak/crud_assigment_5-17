@@ -40,4 +40,5 @@ class BoardController < ApplicationController
     
     redirect_to '/index'
   end
+
 end

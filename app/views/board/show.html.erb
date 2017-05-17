@@ -33,3 +33,22 @@
           </div>
         </div>
         </div>
+        
+      <div class="container my-5">
+      <form action="/reply_create" method="POST">
+      <div class="input-field col s12">
+          <input type="hidden"  name="reply_id" value="<%= @show_list.id %>">
+          작 성 자     : <input name="rep_editor" type="text"><br>
+          댓글입력  : <input name="rep_content" type="text">
+      </div>
+      <button type="submit" name="action">댓글작성</button>
+      </form>
+      </div>
+      
+           <div class ="container mt-5">
+            <% @show_list.replies.each do |p| %>
+                <hr>
+                작성자 : <%= p.editor_reply %>
+                댓글 내용 : <%= p.content_reply %>
+                <a href="/reply_delete/<%= p.id %>">[삭제]</a><br>
+            <% end %> 
